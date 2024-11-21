@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "793676485733",
+    "project_id": "vehicle-rescue-289b7",
+    "storage_bucket": "vehicle-rescue-289b7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793676485733:android:fc25b0a2eab2b2b279628c",
+        "android_client_info": {
+          "package_name": "com.ongera.rescue"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIra46x8PaceNDafk6HaZmklbDRMqxKZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
