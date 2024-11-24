@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:rescue/methods/common_methods.dart';
 import 'package:rescue/pages/home_page.dart';
+import 'package:rescue/pages/profile_page.dart';
 import 'package:rescue/widgets/loading_dialog.dart';
 
 import 'login_screen.dart';
@@ -25,7 +26,7 @@ class _SignupScreenState extends State<SignupScreen>
 
   checkIfNetIsAvailable()
   {
-    cMethods.checkConnectivity(context);
+
 
     signUpValidation(context);
 
@@ -94,7 +95,7 @@ class _SignupScreenState extends State<SignupScreen>
 
     usersRef.set(userDataMap);
 
-    Navigator.push(context, MaterialPageRoute(builder: (c)=> HomePage() ));
+    Navigator.push(context, MaterialPageRoute(builder: (c)=> ProfilePage(user: userFirebase,) ));
 
   }
 
