@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         loginUser(context); // Call the login function
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.green,
+                        backgroundColor: Colors.purple,
                         padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10),
                       ),
                       child: const Text("Log In"),
@@ -134,7 +134,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 },
                 child: const Text(
                   " Don\'t have an account? Sign up",
-                  style: TextStyle(color: Colors.greenAccent),
+                  style: TextStyle(color: Colors.purpleAccent),
                 ),
               ),
             ],

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-
 class ProfilePage extends StatefulWidget {
   final User user;
 
@@ -76,32 +75,58 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
-        backgroundColor: Colors.green,
+        backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (isEditing)
-                ...[
-                  buildTextField('Name', userNameTextEditingController, Icons.person),
-                  buildTextField('Phone', userPhoneTextEditingController, Icons.phone),
-                  buildTextField('Email', emailTextEditingController, Icons.email),
-                  buildTextField('MPesa Number', mpesaNumberTextEditingController, Icons.phone_android),
-                  buildTextField('PayPal Email', paypalEmailTextEditingController, Icons.email),
-                ]
-              else
-                ...[
-                  buildProfileTextWithIcon('Name:', userNameTextEditingController.text, Icons.person),
-                  buildProfileTextWithIcon('Phone:', userPhoneTextEditingController.text, Icons.phone),
-                  buildProfileTextWithIcon('Email:', emailTextEditingController.text, Icons.email),
-                  buildProfileTextWithIcon('MPesa Number:', mpesaNumberTextEditingController.text, Icons.phone_android),
-                  buildProfileTextWithIcon('PayPal Email:', paypalEmailTextEditingController.text, Icons.email),
-                ],
+              // Circular Profile Image (Replace with your image loading logic)
+              CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage('assets/avatarman.png'), // Replace with your image
+              ),
+              SizedBox(height: 20),
+
+              // Card for Profile Information
+              Card(
+                elevation: 5,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      if (isEditing)
+                        ...[
+                          // Edit Mode: TextFields
+                          buildTextField('Name', userNameTextEditingController, Icons.person),
+                          buildTextField('Phone', userPhoneTextEditingController, Icons.phone),
+                          buildTextField('Email', emailTextEditingController, Icons.email),
+                          buildTextField('MPesa Number', mpesaNumberTextEditingController, Icons.phone_android),
+                          buildTextField('PayPal Email', paypalEmailTextEditingController, Icons.email),
+                        ]
+                      else
+                        ...[
+                          // View Mode: ListTiles
+                          buildProfileListTile('Name', userNameTextEditingController.text, Icons.person),
+                          buildProfileListTile('Phone', userPhoneTextEditingController.text, Icons.phone),
+                          buildProfileListTile('Email', emailTextEditingController.text, Icons.email),
+                          buildProfileListTile('MPesa Number', mpesaNumberTextEditingController.text, Icons.phone_android),
+                          buildProfileListTile('PayPal Email', paypalEmailTextEditingController.text, Icons.email),
+                        ],
+                    ],
+                  ),
+                ),
+              ),
+
               SizedBox(height: 24),
+
+              // Action Buttons
               isLoading
                   ? Center(child: CircularProgressIndicator())
                   : Column(
@@ -161,19 +186,15 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget buildProfileTextWithIcon(String label, String text, IconData icon) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        children: [
-          Icon(icon, color: Colors.green),
-          SizedBox(width: 8),
-          Text(
-            '$label $text',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
-          ),
-        ],
+  // Helper function to build ListTiles for profile details
+  Widget buildProfileListTile(String label, String text, IconData icon) {
+    return ListTile(
+      leading: Icon(icon, color: Colors.green),
+      title: Text(
+        label,
+        style: TextStyle(fontWeight: FontWeight.bold),
       ),
+      subtitle: Text(text),
     );
   }
 

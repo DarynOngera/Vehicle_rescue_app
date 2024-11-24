@@ -205,7 +205,7 @@ class _SignupScreenState extends State<SignupScreen>
 
                               },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.green,
+                            backgroundColor: Colors.purple,
                             padding: EdgeInsets.symmetric(horizontal: 80, vertical: 10)
                           ),
                         child: const Text(
@@ -230,7 +230,7 @@ class _SignupScreenState extends State<SignupScreen>
                   child: const Text(
                     "Already have an account?,Log in",
                     style: TextStyle(
-                      color: Colors.greenAccent,
+                      color: Colors.purpleAccent,
                     ),
                   ),
                 ),

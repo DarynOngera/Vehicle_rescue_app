@@ -50,7 +50,9 @@ class _AddTowTruckPageState extends State<AddTowTruckPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text('Add Tow Truck'),
+
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

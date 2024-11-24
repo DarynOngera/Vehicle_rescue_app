@@ -22,6 +22,7 @@ dependencies:
   firebase_auth: ^5.3.3
   firebase_database: ^11.1.6
   firebase_storage: ^12.3.6
+  flutter_paypal: ^0.2.1
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +35,5 @@ flutter:
   # Add any project-specific assets here
   assets:
     - assets/images/logo.png
+    - assets/images/avatarman.png
+    - assets/Themes/style.json
