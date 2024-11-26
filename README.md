@@ -34,4 +34,4 @@ flutter run
 ```
 
 ## License
-This project is not licensed under any specific license; the default copyright applies.
+This project is opensource and free to use by all.
