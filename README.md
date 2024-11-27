@@ -9,29 +9,12 @@ The Vehicle Rescue app is designed to assist users in locating nearby service po
 - **Request Assistance:** Directly request assistance through the app.
 
 ## Technology Stack
-- **Programming Language:** Dart
-- **Framework:** Flutter (for cross-platform mobile app development)
-- **API:** Google Maps API (for location-based services)
+-  Kotlin
+- Firebase for database
+-  Google Maps API (for location-based services)
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/DarynOngera/Vehicle_rescue_app.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Vehicle_rescue_app
-   ```
-3. Install dependencies:
-   ```bash
-   flutter pub get
-   ```
 
-## Usage
-To run the app, use the following command:
-```bash
-flutter run
-```
+
 ##Layout
 
 ![login_](https://github.com/user-attachments/assets/bef85301-f7db-492f-a877-e119c017c7e7)
